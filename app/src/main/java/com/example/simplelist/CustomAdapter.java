@@ -8,8 +8,6 @@ import android.widget.BaseAdapter;
 import android.widget.ImageView;
 import android.widget.TextView;
 
-import java.util.ArrayList;
-
 public class CustomAdapter extends BaseAdapter {
 
     Context context;
@@ -45,7 +43,7 @@ public class CustomAdapter extends BaseAdapter {
 
         View view = LayoutInflater.from(context).inflate(R.layout.list_item1, null);
         TextView nameTv = view.findViewById(R.id.userName);
-        TextView emailTv = view.findViewById(R.id.userEmail);
+        TextView emailTv = view.findViewById(R.id.emailTv);
         ImageView image = view.findViewById(R.id.userImage);
 
         nameTv.setText(userNames[position]);
