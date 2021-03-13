@@ -15,17 +15,25 @@ public class CustomAdapter extends BaseAdapter {
     String[] userEMails;
     int[] userImages;
 
+    User[] users;
 
-    public CustomAdapter(Context context, String[] userNames, String[] userEMails, int[] userImages) {
+
+//    public CustomAdapter(Context context, String[] userNames, String[] userEMails, int[] userImages) {
+//        this.context = context;
+//        this.userNames = userNames;
+//        this.userEMails = userEMails;
+//        this.userImages = userImages;
+//    }
+
+
+    public CustomAdapter(Context context, User[] users) {
         this.context = context;
-        this.userNames = userNames;
-        this.userEMails = userEMails;
-        this.userImages = userImages;
+        this.users = users;
     }
 
     @Override
     public int getCount() {
-        return userNames.length;
+        return users.length;
     }
 
     @Override
@@ -46,9 +54,9 @@ public class CustomAdapter extends BaseAdapter {
         TextView emailTv = view.findViewById(R.id.emailTv);
         ImageView image = view.findViewById(R.id.userImage);
 
-        nameTv.setText(userNames[position]);
-        emailTv.setText(userEMails[position]);
-        image.setImageResource(userImages[position]);
+        nameTv.setText(users[position].getName());
+        emailTv.setText(users[position].getEmail());
+        image.setImageResource(users[position].getImage());
 
 
         return view;
